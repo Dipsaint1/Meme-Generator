@@ -47,7 +47,6 @@ main{
   border: 1px solid #D5D4D8;
   text-indent: 5px;
 }
- 
 
 .form--button{
   grid-column: 1 / -1;    /* Full width, from the beginning to the very end */
@@ -57,4 +56,41 @@ main{
   border-radius: 5px;
   cursor: pointer;
   border: none;
+}
+
+.meme-image{
+  max-width: 100%;
+}
+
+.form-sample{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.form-sample > input{
+  width : 70%;
+  height: 30px;
+  margin-bottom: 20px;
+}
+
+.form-sample textarea{
+  width : 70%;
+}
+
+.form-sample div{
+  display: flex;
+  width: 70%;
+  margin-top: 10px;
+}
+
+.form-sample div input{
+  flex-basis: 5%;
+  height: 15px;
+  margin-right: 10px;
+}
+.form-sample fieldset{
+  margin-top: 20px;
+  width: 70%;
 }
