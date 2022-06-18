@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 // import Header from "./components/Header";
 // import Meme from "./components/Meme";
-import Forms from "./components/Forms";
+// import Forms from "./components/Forms";
+import FormSample from "./components/FormSample";
 
 // import Counter from "./components/Counter";
 
@@ -12,8 +13,9 @@ class App extends Component {
       <>
         {/* <Header /> */}
         {/* <Meme/> */}
-        <Forms />
+        {/* <Forms /> */}
         {/* <Counter/> */}
+        <FormSample />
       </>
     );
   }

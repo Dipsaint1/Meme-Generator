@@ -67,6 +67,7 @@ main{
   flex-direction: column;
   width: 100%;
   align-items: center;
+  margin-top: 20px;
 }
 
 .form-sample > input{
@@ -90,7 +91,24 @@ main{
   height: 15px;
   margin-right: 10px;
 }
-.form-sample fieldset{
+
+.form-sample fieldset, .form-sample select{
   margin-top: 20px;
   width: 70%;
+  min-height: 30px;
+}
+
+.form-sample button{
+  margin-top: 20px;
+  padding: 5px 20px;
+}
+
+::placeholder{
+  font-size: 12px;
+  opacity: 0.4;
+}
+.loginMessage{
+  background-color: red;
+  text-align: start;
+  padding: 10px 0;
 }

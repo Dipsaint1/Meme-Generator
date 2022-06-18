@@ -7,7 +7,8 @@ const Forms = () => {
     email: "",
     comments: "",
     isFriendly: false,
-    employment: ""
+    employment: "",
+    favColor: ""
   });
 
   const handleChange = (e) => {
@@ -18,10 +19,13 @@ const Forms = () => {
     }));
   }
 
-  console.log(formData.employment);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+  }
 
   return (
-    <form className="form-sample">
+    <form className="form-sample" onSubmit={handleSubmit}>
       <input 
         type="text" 
         placeholder='First Name' 
@@ -99,9 +103,24 @@ const Forms = () => {
           <label>Full Time</label>
         </div>
       </fieldset>
-      
 
-      
+      <select 
+        name="favColor"
+        id="favColor"
+        onChange={handleChange}
+        value={formData.favColor}
+      >
+        <option value="">-- Choose Your Favorite Color --</option>
+        <option value="red">Red</option>
+        <option value="orange">Orange</option>
+        <option value="yellow">Yellow</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="indigo">Indigo</option>
+        <option value="violet">Violet</option>
+      </select>
+
+      <button>Submit</button>
     </form>
   );
 }
