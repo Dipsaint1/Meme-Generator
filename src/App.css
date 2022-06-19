@@ -58,6 +58,26 @@ main{
   border: none;
 }
 
+.meme{
+  position: relative;
+  color: white;
+}
+
+.meme--text{
+  position: absolute;
+  width: 80%;
+  word-wrap: break-word;
+  word-break: break-all;
+  text-align: center;
+}
+
+.meme--text.top{
+  top: 0;
+}
+.meme--text.bottom{
+  bottom: 0;
+}
+
 .meme-image{
   max-width: 100%;
 }

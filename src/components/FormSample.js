@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 const FormSample = () => {
-
   const [isLoginFailed, setIsLoginFailed] = useState(false);
   const [isLoginSuccessFul, setIsLoginSuccessFul] = useState(false);
   const [formData, setFormData] = useState({
@@ -41,11 +40,11 @@ const FormSample = () => {
 
   return (
     <div className="form-sample form-container">
-      { isLoginFailed ?  <div className="loginMessage">Error</div> : null }
+      { isLoginFailed ?  <div className="loginMessage">Passwords do not match</div> : null }
       { isLoginSuccessFul ?  <div className="loginMessage">Welcome { formData.name }</div> : null }
       <form className="form-sample" onSubmit={handleSubmit}>
-      <inpu
-        className='form--input' 
+      <input
+          className='form--input' 
           type="text" 
           name="name"
           placeholder="Name"
@@ -58,7 +57,7 @@ const FormSample = () => {
           name="email"
           placeholder="Email"
           onChange={handleChange}
-          // value={formData.email}
+          value={formData.email}
         />
         <input
           className='form--input'
