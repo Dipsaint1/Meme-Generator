@@ -1,19 +1,16 @@
-import React, {useState} from 'react';
-import memesData from "../memesData";
+import React, {useState, useEffect} from 'react';
+// import memesData from "../memesData";
 
 const Meme = () => {
-  // const [memeImage, setMemeImage] = useState("https://picsum.photos/200");
-  const [allMemeImages, setAllMemeImages] = useState(memesData);
+  const [allMemes, setAllMemes] = useState([]);
   const [meme, setMeme] = useState({
     topText: "",
     bottomText: "",
     randomImage: "https://picsum.photos/200"
   })
   const getMemeImage = (e) => {
-    e.preventDefault();
-    const memesArray = memesData.data.memes;
-    const randomNumber = Math.floor(Math.random() * memesArray.length);
-    const url = memesArray[randomNumber].url;
+    const randomNumber = Math.floor(Math.random() * allMemes.length);
+    const url = allMemes[randomNumber].url;
     setMeme(prevMeme =>({
       ...prevMeme,
       randomImage: url
@@ -28,6 +25,16 @@ const Meme = () => {
       [name]: type === "checkbox" ? checked : value
     }));
   }
+
+  useEffect(function(){
+
+    fetch("https://api.imgflip.com/get_memes")
+    .then(res => res.json())
+    .then(data => setAllMemes(data.data.memes))
+    .catch((err) => {
+      return err;
+    });
+    }, []);
 
   return ( 
     <main>

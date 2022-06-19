@@ -65,7 +65,8 @@ main{
 
 .meme--text{
   position: absolute;
-  width: 80%;
+  width: 60%;
+  left: 20%;
   word-wrap: break-word;
   word-break: break-all;
   text-align: center;
@@ -78,8 +79,8 @@ main{
   bottom: 0;
 }
 
-.meme-image{
-  max-width: 100%;
+.meme--image{
+  width: 100%;
 }
 
 .form-sample{
