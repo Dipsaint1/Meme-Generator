@@ -3,12 +3,12 @@ import React, {useEffect, useState} from 'react';
 // Clean up
 const WindowTracker = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  // useEffect(() => {
-  //   window.addEventListener("resize", function(){
-  //     setWindowWidth(prev => window.innerWidth);
-  //   }); 
-  // }, []);
+  const [show, setShow] = useState(true);
 
+  const toggleShow = () => {
+    setShow(prev => !prev);
+  }
+  
   useEffect(() => {
     function watchWidth(){
       setWindowWidth(prev => window.innerWidth);
@@ -23,9 +23,13 @@ const WindowTracker = () => {
   }, []);
 
   return (
-    <div className="container">
-      <h2>Window width: {windowWidth}px</h2>
-    </div>
+    <>
+      <button onClick={toggleShow}>Toggle Window Tracker</button>
+      <div className="container">
+        {show ? <h2>Window width: {windowWidth}px</h2> : null }
+      </div>
+    </>
+    
   );
 }
 
